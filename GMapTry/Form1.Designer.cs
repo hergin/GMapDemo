@@ -138,6 +138,7 @@
             // 
             // radioButton_fastest
             // 
+            this.radioButton_fastest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton_fastest.AutoSize = true;
             this.radioButton_fastest.Checked = true;
             this.radioButton_fastest.Location = new System.Drawing.Point(660, 111);
@@ -150,12 +151,12 @@
             // 
             // radioButton_shortest
             // 
+            this.radioButton_shortest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton_shortest.AutoSize = true;
             this.radioButton_shortest.Location = new System.Drawing.Point(725, 111);
             this.radioButton_shortest.Name = "radioButton_shortest";
             this.radioButton_shortest.Size = new System.Drawing.Size(64, 17);
             this.radioButton_shortest.TabIndex = 9;
-            this.radioButton_shortest.TabStop = true;
             this.radioButton_shortest.Text = "Shortest";
             this.radioButton_shortest.UseVisualStyleBackColor = true;
             // 
