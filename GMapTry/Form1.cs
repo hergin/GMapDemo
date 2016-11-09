@@ -266,7 +266,7 @@ namespace GMapTry
                 string[] langLong = coordinate.Split(new char[] { ',' });
                 GMapMarker marker =
                 new GMarkerGoogle(
-                    new PointLatLng(double.Parse(langLong[0]), double.Parse(langLong[1])),
+                    new PointLatLng(double.Parse(langLong[1]), double.Parse(langLong[0])),
                     bmp);
                 route.Markers.Add(marker);
             }
