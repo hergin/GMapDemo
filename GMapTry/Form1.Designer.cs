@@ -38,6 +38,12 @@
             this.label_distance = new System.Windows.Forms.Label();
             this.radioButton_fastest = new System.Windows.Forms.RadioButton();
             this.radioButton_shortest = new System.Windows.Forms.RadioButton();
+            this.radioButton_google = new System.Windows.Forms.RadioButton();
+            this.radioButton_openMap = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // gmap
@@ -108,7 +114,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(646, 142);
+            this.button1.Location = new System.Drawing.Point(646, 225);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 23);
             this.button1.TabIndex = 5;
@@ -120,7 +126,7 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(646, 181);
+            this.label3.Location = new System.Drawing.Point(646, 264);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 6;
@@ -130,7 +136,7 @@
             // 
             this.label_distance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_distance.AutoSize = true;
-            this.label_distance.Location = new System.Drawing.Point(701, 181);
+            this.label_distance.Location = new System.Drawing.Point(701, 264);
             this.label_distance.Name = "label_distance";
             this.label_distance.Size = new System.Drawing.Size(30, 13);
             this.label_distance.TabIndex = 7;
@@ -141,7 +147,7 @@
             this.radioButton_fastest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton_fastest.AutoSize = true;
             this.radioButton_fastest.Checked = true;
-            this.radioButton_fastest.Location = new System.Drawing.Point(660, 111);
+            this.radioButton_fastest.Location = new System.Drawing.Point(11, 20);
             this.radioButton_fastest.Name = "radioButton_fastest";
             this.radioButton_fastest.Size = new System.Drawing.Size(59, 17);
             this.radioButton_fastest.TabIndex = 8;
@@ -153,20 +159,68 @@
             // 
             this.radioButton_shortest.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radioButton_shortest.AutoSize = true;
-            this.radioButton_shortest.Location = new System.Drawing.Point(725, 111);
+            this.radioButton_shortest.Location = new System.Drawing.Point(76, 20);
             this.radioButton_shortest.Name = "radioButton_shortest";
             this.radioButton_shortest.Size = new System.Drawing.Size(64, 17);
             this.radioButton_shortest.TabIndex = 9;
             this.radioButton_shortest.Text = "Shortest";
             this.radioButton_shortest.UseVisualStyleBackColor = true;
             // 
+            // radioButton_google
+            // 
+            this.radioButton_google.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton_google.AutoSize = true;
+            this.radioButton_google.Checked = true;
+            this.radioButton_google.Location = new System.Drawing.Point(10, 23);
+            this.radioButton_google.Name = "radioButton_google";
+            this.radioButton_google.Size = new System.Drawing.Size(59, 17);
+            this.radioButton_google.TabIndex = 10;
+            this.radioButton_google.TabStop = true;
+            this.radioButton_google.Text = "Google";
+            this.radioButton_google.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_openMap
+            // 
+            this.radioButton_openMap.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radioButton_openMap.AutoSize = true;
+            this.radioButton_openMap.Location = new System.Drawing.Point(75, 23);
+            this.radioButton_openMap.Name = "radioButton_openMap";
+            this.radioButton_openMap.Size = new System.Drawing.Size(72, 17);
+            this.radioButton_openMap.TabIndex = 11;
+            this.radioButton_openMap.Text = "OpenMap";
+            this.radioButton_openMap.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.radioButton_shortest);
+            this.groupBox1.Controls.Add(this.radioButton_fastest);
+            this.groupBox1.Location = new System.Drawing.Point(649, 114);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(155, 47);
+            this.groupBox1.TabIndex = 12;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Speed";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.radioButton_google);
+            this.groupBox2.Controls.Add(this.radioButton_openMap);
+            this.groupBox2.Location = new System.Drawing.Point(649, 167);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(155, 50);
+            this.groupBox2.TabIndex = 13;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Provider";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 491);
-            this.Controls.Add(this.radioButton_shortest);
-            this.Controls.Add(this.radioButton_fastest);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label_distance);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button1);
@@ -177,7 +231,12 @@
             this.Controls.Add(this.gmap);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,6 +254,10 @@
         private System.Windows.Forms.Label label_distance;
         private System.Windows.Forms.RadioButton radioButton_fastest;
         private System.Windows.Forms.RadioButton radioButton_shortest;
+        private System.Windows.Forms.RadioButton radioButton_google;
+        private System.Windows.Forms.RadioButton radioButton_openMap;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

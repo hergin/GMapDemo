@@ -195,6 +195,9 @@ namespace GMapTry
             // routes.Routes.Add(route);
             // gmap.Overlays.Add(routes);
 
+            GMapOverlay routesOverlay = new GMapOverlay("Myroutes");
+            gmap.Overlays.Add(routesOverlay);
+
             gmap.SetPositionByKeywords("Birmingham, AL");
             //gmap.Position = new PointLatLng(33.518336, -86.825135);
         }
@@ -239,15 +242,12 @@ namespace GMapTry
             next.BackColor = Color.Yellow;
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        async void findRouteViaOpenMap()
         {
-            if (string.IsNullOrEmpty(textbox_location1.Text) || string.IsNullOrEmpty(textbox_location2.Text))
-            {
-                MessageBox.Show("Please select two locations at least!", "Empty location");
-                return;
-            }
+            gmap.Overlays.Where(o => o.Id == "Myroutes").ToList()[0].Routes.Clear();
             string[] location1 = textbox_location1.Text.Split(new char[] { ',' });
             string[] location2 = textbox_location2.Text.Split(new char[] { ',' });
+
             var client = new HttpClient();
             client.BaseAddress = new Uri(@"http://www.yournavigation.org/api/dev/route.php?flat=" + location1[0] + "&flon=" + location1[1] + "&tlat=" + location2[0] + "&tlon=" + location2[1] + "&v=motorcar&fast=" + (radioButton_fastest.Checked ? "1" : "0") + "&layer=mapnik&instructions=0");
             client.DefaultRequestHeaders.Accept.Clear();
@@ -274,6 +274,39 @@ namespace GMapTry
             gmap.Overlays.Add(route);
             gmap.Refresh();
             gmap.ReloadMap();
+        }
+
+        void findRouteViaGoogle()
+        {
+            string[] location1 = textbox_location1.Text.Split(new char[] { ',' });
+            string[] location2 = textbox_location2.Text.Split(new char[] { ',' });
+            route.Markers.Clear();
+            GDirections ss;
+            PointLatLng startp = new PointLatLng(double.Parse(location1[0]), double.Parse(location1[1]));
+            PointLatLng endp = new PointLatLng(double.Parse(location2[0]), double.Parse(location2[1]));
+            var xx = GMapProviders.GoogleMap.GetDirections(out ss, startp, endp, false, false, false, false, false);
+            GMapRoute r = new GMapRoute(ss.Route, "Myroutes");
+            gmap.Overlays.Where(o => o.Id == "Myroutes").ToList()[0].Routes.Clear();
+            gmap.Overlays.Where(o => o.Id == "Myroutes").ToList()[0].Routes.Add(r);
+
+            r.Stroke.Width = 10;
+            r.Stroke.Color = Color.LimeGreen;
+
+            label_distance.Text = ss.Distance;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textbox_location1.Text) || string.IsNullOrEmpty(textbox_location2.Text))
+            {
+                MessageBox.Show("Please select two locations at least!", "Empty location");
+                return;
+            }
+
+            if (radioButton_google.Checked)
+                findRouteViaGoogle();
+            else
+                findRouteViaOpenMap();
         }
     }
 }
