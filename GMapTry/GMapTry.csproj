@@ -91,6 +91,8 @@
   <ItemGroup>
     <Content Include="Lib\GMap.NET.Core.dll" />
     <Content Include="Lib\GMap.NET.WindowsForms.dll" />
+    <None Include="Resources\US280.txt" />
+    <None Include="Resources\AL79.txt" />
     <None Include="Resources\I65-simple.txt" />
     <None Include="Resources\dotGreen.png" />
     <None Include="Resources\I22.txt" />

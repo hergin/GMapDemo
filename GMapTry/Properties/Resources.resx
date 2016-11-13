@@ -145,4 +145,10 @@
   <data name="I65" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\I65.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
   </data>
+  <data name="AL79" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AL79.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="US280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\US280.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
 </root>

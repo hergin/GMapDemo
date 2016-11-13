@@ -117,6 +117,34 @@ namespace GMapTry
                 I22.Markers.Add(marker);
             }
 
+            GMapOverlay US280 = new GMapOverlay("US280");
+
+            lines = Properties.Resources.US280.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string line in lines)
+            {
+                string[] langLong = line.Split(new char[] { ',' });
+                GMapMarker marker =
+                new GMarkerGoogle(
+                    new PointLatLng(double.Parse(langLong[0]), double.Parse(langLong[1])),
+                    bmp);
+                marker.ToolTipText = "US280 at " + line;
+                US280.Markers.Add(marker);
+            }
+
+            GMapOverlay AL79 = new GMapOverlay("AL79");
+
+            lines = Properties.Resources.AL79.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string line in lines)
+            {
+                string[] langLong = line.Split(new char[] { ',' });
+                GMapMarker marker =
+                new GMarkerGoogle(
+                    new PointLatLng(double.Parse(langLong[0]), double.Parse(langLong[1])),
+                    bmp);
+                marker.ToolTipText = "AL79 at " + line;
+                AL79.Markers.Add(marker);
+            }
+
             Bitmap hotspotBmp = new Bitmap(Properties.Resources.hotspot, new Size(50, 50));
 
 
@@ -174,6 +202,8 @@ namespace GMapTry
             gmap.Overlays.Add(I459);
             gmap.Overlays.Add(I59);
             gmap.Overlays.Add(I22);
+            gmap.Overlays.Add(AL79);
+            gmap.Overlays.Add(US280);
             gmap.Overlays.Add(route);
 
             gmap.Overlays.Add(hotspots);
